@@ -144,7 +144,7 @@ if __name__ == "__main__":
         <div class="container">
     '''
     show_code = '''             <div style="flex: 0 0 auto; text-align: center;">
-                <img src="../objects_imgs/${OBJ_NAME}$/base{ID}.jpg" 
+                <img src="./objects_imgs/${OBJ_NAME}$/base{ID}.jpg" 
                     alt="base{ID}" 
                     style="width:100%; max-width:350px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
                 <p style="margin-top:8px; font-size:16px; color:#555;">base{ID}</p>
