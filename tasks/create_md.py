@@ -129,7 +129,7 @@ if __name__ == "__main__":
         <video src="./task_video_clean/${TASK}$/ARX-X5_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/ur5-wsg_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
     </div>
-    <b>Description</b>: ${TASK_DESCRIPTION}$<br>
+    <br><b>Description</b>: ${TASK_DESCRIPTION}$<br>
     <b>Average Steps</b>: ${TASK_AVE_STEPS}$<br>
     <b>Objects</b>: ${TASK_USE_OBJ}$<br>
     <table style="margin:0 auto;border-collapse:collapse;width:auto;min-width:180px;background-color:white;">
