@@ -121,12 +121,14 @@ if __name__ == "__main__":
         <video src="./task_video_clean/${TASK}$/aloha-agilex_head.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/franka-panda_head.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/ARX-X5_head.mp4" controls loop muted autoplay style="width: 25%;"></video>
+        <video src="./task_video_clean/${TASK}$/piper_head.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/ur5-wsg_head.mp4" controls loop muted autoplay style="width: 25%;"></video>
     </div>
     <div style="display: flex;">
         <video src="./task_video_clean/${TASK}$/aloha-agilex_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/franka-panda_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/ARX-X5_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
+        <video src="./task_video_clean/${TASK}$/piper_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
         <video src="./task_video_clean/${TASK}$/ur5-wsg_world.mp4" controls loop muted autoplay style="width: 25%;"></video>
     </div>
     <br><b>Description</b>: ${TASK_DESCRIPTION}$<br>
@@ -177,14 +179,15 @@ if __name__ == "__main__":
         now_html_file = now_html_file.replace("${TASK_AVE_STEPS}$", str(ave_step)+" (Aloha-AgileX, save_freq=15)")
         now_html_file = now_html_file.replace("${TASK_DESCRIPTION}$", description)
         now_html_file = now_html_file.replace("${TASK_USE_OBJ}$", objects)
+
         for embodiment in embodiments_success_rate.keys():
             now_html_file = now_html_file.replace("${"+embodiment.upper()+"}$", str(embodiments_success_rate[embodiment])+'%')
             if not os.path.exists(f'./task_video_clean/{task}/{embodiments_dic[embodiment]}_head.mp4'):
                 if embodiments_success_rate[embodiment] > 0:
                     error_task_embodiment.append((task, embodiment, "No video"))
                 video_path = f'./task_video_clean/{task}/{embodiments_dic[embodiment]}'
-                now_html_file = now_html_file.replace(f'<video src="{video_path}_head.mp4" controls loop muted autoplay></video>', '')
-                now_html_file = now_html_file.replace(f'<video src="{video_path}_world.mp4" controls loop muted autoplay></video>', '')
+                now_html_file = now_html_file.replace(f'<video src="{video_path}_head.mp4" controls loop muted autoplay style="width: 25%;"></video>', '')
+                now_html_file = now_html_file.replace(f'<video src="{video_path}_world.mp4" controls loop muted autoplay style="width: 25%;"></video>', '')
             else:
                 if embodiments_success_rate[embodiment] == 0:
                     error_task_embodiment.append((task, embodiment, "0 success rate"))
