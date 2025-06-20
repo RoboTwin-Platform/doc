@@ -172,6 +172,11 @@ if __name__ == "__main__":
             if objects != "":
                 objects += ", "
             objects += obj
+        success_num = 0
+        for embodiment in embodiments_success_rate.keys():
+            if (os.path.exists(f'./task_video_clean/{task}/{embodiments_dic[embodiment]}_head.mp4') )or (embodiments_success_rate[embodiment] > 0):
+                success_num += 1
+        video_width = 100 / success_num
         now_html_file = html_tmp
         # now_html_file = now_html_file.replace(old_display, high_light)
         now_html_file = now_html_file.replace("${TASK}$", task)
@@ -191,6 +196,12 @@ if __name__ == "__main__":
             else:
                 if embodiments_success_rate[embodiment] == 0:
                     error_task_embodiment.append((task, embodiment, "0 success rate"))
+                else :
+                    video_path = f'./task_video_clean/{task}/{embodiments_dic[embodiment]}'
+                    now_html_file = now_html_file.replace(f'<video src="{video_path}_head.mp4" controls loop muted autoplay style="width: 25%;"></video>', 
+                                                          f'<video src="{video_path}_head.mp4" controls loop muted autoplay style="width: {video_width}%;"></video>')
+                    now_html_file = now_html_file.replace(f'<video src="{video_path}_world.mp4" controls loop muted autoplay style="width: 25%;"></video>', 
+                                                          f'<video src="{video_path}_world.mp4" controls loop muted autoplay style="width: {video_width}%;"></video>')
         save_html_file(f'./{task}.md', now_html_file)
     for item in error_task_embodiment:
         print(item)
