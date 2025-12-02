@@ -20,7 +20,7 @@ This guide explains how to configure a new embodiment from scratch, using Franka
 
 For complete configuration instructions, refer to the official documentation: https://curobo.org/tutorials/1_robot_configuration.html. This section provides the minimal configuration steps.
 
-### 1.1 Create the embodiment directory and files
+### Create the embodiment directory and files
 
 ```bash
 cd ${ROBOTWIN_ROOT_PATH}
@@ -30,7 +30,7 @@ touch curobo_tmp.yml
 touch collision.yml
 ```
 
-### 1.2 Configure curobo_tmp.yml
+### Configure curobo_tmp.yml
 
 Here's a minimal Franka configuration example:
 
@@ -84,7 +84,7 @@ planner:
 
 5. **Frame Bias**: For single-arm URDFs, keep `planner/frame_bias` as `[0., 0., 0.]`. For dual-arm setups like ALOHA, slight adjustments are needed (detailed in the [dual-arm configuration section](#dual-arm-urdf-configuration)).
 
-### 1.3 Configure collision.yml
+### Configure collision.yml
 
 After annotating with Isaac Sim, you'll get collision spheres for different joints. Fill them into collision.yml in this format:
 
@@ -100,7 +100,7 @@ collision_spheres:
         # ... more spheres
 ```
 
-### 1.4 Verify CuRobo Configuration
+### Verify CuRobo Configuration
 
 After configuring CuRobo, verify the setup with a simple forward kinematics test. First, update the `${ASSETS_PATH}`:
 
@@ -136,14 +136,14 @@ If no errors occur, the configuration is successful.
 
 ## Step 2: Configure RoboTwin Config File
 
-### 2.1 Create config.yml
+### Create config.yml
 
 ```bash
 cd assets/embodiments/new_robot
 touch config.yml
 ```
 
-### 2.2 Parameter Configuration
+### Parameter Configuration
 
 Here's a Franka configuration example with detailed explanations:
 
@@ -238,7 +238,7 @@ embodiment:
 
 This calibration requires the desktop environment and is **extremely important**.
 
-### 5.1 Create Temporary URDF
+### Create Temporary URDF
 
 Before calibrating `delta_matrix` and `global_trans_matrix`, you must create a temporary URDF. Using Franka as an example:
 
@@ -279,7 +279,7 @@ Example modifications:
 </joint>
 ```
 
-### 5.2 Find Valid Pose
+### Find Valid Pose
 
 The `delta_matrix` unifies coordinate systems across different robot arms. First, run this script to find a valid pose:
 
@@ -336,14 +336,11 @@ x, y, z, success
 ...
 ```
 
-### 5.3 Test in Simulation
+### Test in Simulation
 
-Choose any successful xyz coordinates and modify `envs/robot/planner.py` around line 266:
+Choose any successful xyz coordinates and modify `envs/robot/planner.py` around line 126:
 
 ```python
-target_pose_p[0] += self.frame_bias[0]
-target_pose_p[1] += self.frame_bias[1]
-target_pose_p[2] += self.frame_bias[2]
 ## Temporarily add the successful xyz coordinates ##
 target_pose_p = [0.35, 0.23, 0.09]  # Example: using 0.35, 0.23, 0.09
 target_pose_q = [1., 0., 0., 0.]
@@ -370,7 +367,7 @@ Set `render_freq` to a positive number in your task config (e.g., `demo_randomiz
 bash collect_data.sh beat_block_hammer demo_randomized 0
 ```
 
-### 5.4 Analyze Coordinate Systems
+### Analyze Coordinate Systems
 
 You should see a visualization similar to this:
 
@@ -388,7 +385,7 @@ You should see a visualization similar to this:
   - **Y-axis**: Determined by right-hand rule
   - This frame is fixed and consistent across all robots
 
-### 5.5 Calculate delta_matrix
+### Calculate delta_matrix
 
 The `delta_matrix` represents the rotation from ee_joint frame to reference frame: `{ee_joint}_Rotation_{reference}`.
 
@@ -403,7 +400,7 @@ Update this matrix in your `config.yml`.
 
 ## Step 6: Calibrate global_trans_matrix
 
-### 6.1 Get Actual Planned Pose
+### Get Actual Planned Pose
 
 Keep the `time.sleep` in `beat_block_hammer.py` and modify `envs/robot/planner.py` to output the target quaternion:
 
@@ -425,7 +422,7 @@ Expected output:
 
 **Important**: Use your actual output quaternion values, not the example above. Each robot arm will produce different quaternion values based on its specific configuration.
 
-### 6.2 Test with New Quaternion
+### Test with New Quaternion
 
 Use the output quaternion to test valid positions by modifying the test script, and REMEMBER TO UPDATE THE QUATERNION: 
 
@@ -488,7 +485,7 @@ x, y, z, success
 ...
 ```
 
-### 6.3 Calculate global_trans_matrix
+### Calculate global_trans_matrix
 
 Update `envs/robot/planner.py` with a successful position:
 
@@ -545,7 +542,7 @@ Expected output:
 
 This is your `global_trans_matrix`. Add it to your `config.yml`.
 
-### 6.4 Clean Up
+### Clean Up
 
 Restore the modified files:
 
