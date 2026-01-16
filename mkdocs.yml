@@ -27,6 +27,7 @@ nav:
       - DP3: usage/DP3.md
       - RDT: usage/RDT.md
       - Pi0: usage/Pi0.md
+      - Pi0.5: usage/Pi0.5.md
       - DexVLA: usage/DexVLA.md
       - TinyVLA: usage/TinyVLA.md
       - OpenVLA-oft: usage/OpenVLA-oft.md
