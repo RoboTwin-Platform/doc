@@ -84,11 +84,11 @@ hr.narrow {margin: 0 10px}
 
 <img src="./assets/robotwin-text-logo.jpg" alt="description" style="display: block; margin: auto; width: 70%;">
 
-<h3 align="center"><b><a href="https://robotwin-platform.github.io/">Webpage</a> | <a href="https://arxiv.org/pdf/2506.18088">PDF</a> | <a href="https://arxiv.org/abs/2506.18088">arXiv</a> | <a href="http://github.com/robotwin-Platform/RoboTwin">Repo</a> | <a href="https://www.bilibili.com/video/BV18p3izYE63/?spm_id_from=333.337.search-card.all.click&vd_source=ab9cf5374617c2867aaea34af29b53c9">Talk (in Chinese)</a> | <a href="https://robotwin-platform.github.io/leaderboard">LeaderBoard</a> | <a href="https://robotwin-platform.github.io/papers-citing-robotwin">Citations</a> | <a href="https://robodojo-benchmark.com/">RoboDojo</a></b></h3>
+<h3 align="center"><b><a href="https://robotwin-platform.github.io/">Webpage</a> | <a href="https://arxiv.org/pdf/2506.18088">PDF</a> | <a href="https://arxiv.org/abs/2506.18088">arXiv</a> | <a href="http://github.com/robotwin-Platform/RoboTwin">Repo</a> | <a href="https://www.bilibili.com/video/BV18p3izYE63/?spm_id_from=333.337.search-card.all.click&vd_source=ab9cf5374617c2867aaea34af29b53c9">Talk (in Chinese)</a> | <a href="https://robotwin-platform.github.io/leaderboard">LeaderBoard</a> | <a href="https://robotwin-platform.github.io/papers-citing-robotwin">Citations</a> | <a href="https://robodojo-benchmark.com/">RoboDojo</a> | <a href="https://rmbench.github.io/">RMBench</a></b></h3>
 
 > Here is the official documentation for RoboTwin 2.0 (<i style="color: red; display: inline;"><b>ICML 2026</b></i>), which includes installation and usage instructions for various RoboTwin functionalities, detailed information on the 50 bimanual tasks in RoboTwin 2.0, comprehensive descriptions of the RoboTwin-OD dataset, and guidelines for joining the community.
 
-> Looking for a unified sim-and-real evaluation of generalist robot manipulation policies? Check out <b><a href="https://robodojo-benchmark.com/">RoboDojo</a></b> — a complementary benchmark for comprehensive policy evaluation.
+> Looking for a unified sim-and-real benchmark for evaluating generalist robot manipulation policies? Check out <b><a href="https://robodojo-benchmark.com/">RoboDojo</a></b>. Interested in memory-dependent manipulation? Check out <b><a href="https://rmbench.github.io/">RMBench</a></b>, built on RoboTwin 2.0.
 
 <img src="./assets/teaser.png" alt="description" style="display: block; margin: auto; width: 100%;">
 
@@ -118,18 +118,20 @@ hr.narrow {margin: 0 10px}
 
 ## Related Projects
 
-<b><a href="https://robodojo-benchmark.com/">RoboDojo</a></b>: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies — evaluate generalist policies across simulation and the real world. Visit <a href="https://robodojo-benchmark.com/">https://robodojo-benchmark.com/</a>.
+<b><a href="https://robodojo-benchmark.com/">RoboDojo</a></b>: A Unified Sim-and-Real Benchmark for Comprehensive Evaluation of Generalist Robot Manipulation Policies. It evaluates generalist policies across simulation and the real world: <a href="https://robodojo-benchmark.com/">https://robodojo-benchmark.com/</a>.
+
+<b><a href="https://rmbench.github.io/">RMBench</a></b>: Memory-Dependent Robotic Manipulation Benchmark with Insights into Policy Design. Built on RoboTwin 2.0, it systematically evaluates policy memory capabilities across multiple levels of memory complexity: <a href="https://rmbench.github.io/">https://rmbench.github.io/</a>.
 
 ## Citations
 If you find our work useful, please consider citing:
 
-RoboTwin 2.0: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation, accepted to <i style="color: red; display: inline;"><b>ICML 2026</b></i>
+RoboTwin 2.0: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation
 ```
-@inproceedings{chen2026robotwin,
-  title={RoboTwin 2.0: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation},
+@article{chen2025robotwin,
+  title={Robotwin 2.0: A scalable data generator and benchmark with strong domain randomization for robust bimanual robotic manipulation},
   author={Chen, Tianxing and Chen, Zanxin and Chen, Baijun and Cai, Zijian and Liu, Yibin and Li, Zixuan and Liang, Qiwei and Lin, Xianliang and Ge, Yiheng and Gu, Zhenyu and others},
-  booktitle={International Conference on Machine Learning (ICML)},
-  year={2026}
+  journal={arXiv preprint arXiv:2506.18088},
+  year={2025}
 }
 ```
 

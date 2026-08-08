@@ -40,11 +40,5 @@ In `ee` mode, the `action` is defined as:
 
 ## Deployment Example
 
-You can find a demonstration of usage in:
-
-```
-policy/Your_Policy/deploy_policy.py
-```
-
-This file provides a sample implementation to help you understand how to use the `take_action` function with different `action_type` settings during deployment.
+Policy evaluation now goes through [XPolicyLab](xpolicylab.md). See `XPolicyLab/policy/demo_policy/deploy.py` and `model.py` for the reference adapter, and use `scripts/eval_policy.sh` for RoboTwin evaluation.
 

@@ -3,7 +3,7 @@
 ## Rigid Body Object Annotation
 ### Create Calibration Window:
 ```bash
-python script/create_object_data.py [-s START] model_name
+python scripts/create_object_data.py [-s START] model_name
 
 positional arguments:
     model_name            Model name
@@ -13,7 +13,7 @@ options:
 ```
 Here, `model_name` is the name of a subdirectory under the `assets/objects/` directory.
 For example, to calibrate the hammer model located at `assets/objects/020_hammer`, run the command:
-`python script/create_object_data.py 020_hammer`.
+`python scripts/create_object_data.py 020_hammer`.
 A window will then appear as shown below:
 ![alt text](./object_marking/image.png)
 

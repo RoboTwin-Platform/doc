@@ -20,7 +20,7 @@ The code generation system also interacts with these important directories:
     - Includes `save_camera_images(task_name, step_name, generate_num_id, save_dir)` for capturing visual observations during task execution
 - **./envs_gen/**: Stores auto-generated task implementations
 - **./task_config/**: Configuration files for tasks and embodiments
-- **./script/**: Template scripts and utilities
+- **./scripts/**: Template scripts and utilities
 - **./assets/objects/**: 3D models and metadata for simulation objects
 - **./camera_images/**: Stores observation images captured during code generation for multi-modal feedback
 
@@ -155,4 +155,4 @@ This will execute the task using the generated code and display the results, all
 
 For more information on generating task descriptions and object descriptions, refer to the documentation in the [description](../description/README.md) directory.
 
-For policy training and evaluation using the generated code, consult the [policy/ACT](../policy/ACT/README.md) documentation.
+For policy training and evaluation using the generated code, consult the [XPolicyLab](xpolicylab.md) documentation (e.g. [ACT adapter](https://github.com/XPolicyLab/XPolicyLab/blob/main/policy/ACT/README.md)).

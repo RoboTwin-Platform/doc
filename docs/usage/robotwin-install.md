@@ -67,16 +67,33 @@ conda activate RoboTwin
 
 RoboTwin 2.0 Code Repo: [https://github.com/RoboTwin-Platform/RoboTwin](https://github.com/RoboTwin-Platform/RoboTwin)
 
+XPolicyLab is embedded as a Git submodule. For a fresh checkout, clone RoboTwin recursively:
+
 ```bash
-git clone https://github.com/RoboTwin-Platform/RoboTwin.git
+git clone --recurse-submodules https://github.com/RoboTwin-Platform/RoboTwin.git
+cd RoboTwin
 ```
 
-Then, run `script/_install.sh` to install basic envs and CuRobo:
-```
-bash script/_install.sh
+For an existing checkout, initialize the version pinned by RoboTwin:
+
+```bash
+git submodule update --init --recursive XPolicyLab
 ```
 
-If you meet curobo config path issue, try to run `python script/update_embodiment_config_path.py`
+To pull the latest XPolicyLab commit on its configured `main` branch and refresh RoboTwin's submodule pin:
+
+```bash
+bash scripts/update_xpolicylab.sh
+# optional: stage the pin / reinstall the editable package
+bash scripts/update_xpolicylab.sh --stage --install
+```
+
+Then, run `scripts/_install.sh` to install basic envs and CuRobo:
+```
+bash scripts/_install.sh
+```
+
+If you meet curobo config path issue, try to run `python scripts/update_embodiment_config_path.py`
 
 If you encounter any problems, please refer to the [manual installation](#manual-installation-only-when-step-2-failed) section. If you are not using 3D data, a failed installation of pytorch3d will not affect the functionality of the project.
 
@@ -85,7 +102,7 @@ If you haven't installed ffmpeg, please turn to [https://ffmpeg.org/](https://ff
 ## Download Assets (RoboTwin-OD, Texture Library and Embodiments)
 To download the assets, run the following command. If you encounter any rate-limit issues, please log in to your Hugging Face account by running `huggingface-cli login`:
 ```
-bash script/_download_assets.sh
+bash scripts/_download_assets.sh
 ```
 
 The structure of the `assets` folder should be like this:
@@ -105,7 +122,7 @@ assets
 ## Manual Installation (Only when step 3 failed)
 1. Install requirements
 ```bash
-pip install -r requirements.txt
+pip install -r scripts/requirements.txt
 ```
 
 2. Install pytorch3d

@@ -1,4 +1,4 @@
-site_name: RoboTwin 2.0 Offical Document
+site_name: RoboTwin 2.0 Official Document
 repo_url: https://github.com/RoboTwin-Platform/RoboTwin
 edit_uri: edit/main/docs/
 site_author: RoboTwin Team
@@ -16,23 +16,10 @@ nav:
   - Usage:
     - usage/index.md
     - Install & Download: usage/robotwin-install.md
+    - XPolicyLab (Policies): usage/xpolicylab.md
     - Collect Data: usage/collect-data.md
-    - Domain Randomization: usage/domain-randomization.md
     - Configurations: usage/configurations.md
     - Control Robot: usage/control-robot.md
-    - Policies (Env, Train & Eval):
-      - Deploy Your Policy: usage/deploy-your-policy.md
-      - ACT: usage/ACT.md
-      - DP: usage/DP.md
-      - DP3: usage/DP3.md
-      - RDT: usage/RDT.md
-      - Pi0: usage/Pi0.md
-      - Pi0.5: usage/Pi05.md
-      - DexVLA: usage/DexVLA.md
-      - TinyVLA: usage/TinyVLA.md
-      - OpenVLA-oft: usage/OpenVLA-oft.md
-      - LLaVA-VLA: usage/LLaVA-VLA.md
-      - GO1: usage/GO1.md
     - Expert Code Gen (for Novel Task): usage/expert-code-gen.md
     - API Tutorial: usage/API.md
     # - Dual Env (Policy and Deployment): usage/dual-env-policy-deploy.md

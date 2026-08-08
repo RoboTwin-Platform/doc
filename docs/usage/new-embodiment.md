@@ -106,7 +106,7 @@ After configuring CuRobo, verify the setup with a simple forward kinematics test
 
 ```bash
 cd ${ROBOTWIN_ROOT_PATH}
-python script/update_embodiment_config_path.py
+python scripts/update_embodiment_config_path.py
 ```
 
 This will generate `curobo.yml` from `curobo_tmp.yml`. Then run this verification code:
