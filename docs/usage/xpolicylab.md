@@ -21,7 +21,8 @@ bash scripts/eval_policy.sh multitask \
   --ckpt-name <checkpoint> \
   --env-cfg-type arx_x5 \
   --policy-conda-env <policy_env> \
-  --eval-env-conda-env <robotwin_env>
+  --eval-env-conda-env <robotwin_env> \
+  --action-type <action_type>
 ```
 
 Add `--dry-run` to validate the schedule without launching anything. Results are written to `eval_result/multitask/` by default.

@@ -1,8 +1,8 @@
 # Configuration Tutorial
 
-All configuration files are stored in the `task_config` folder and follow the standard YAML format.
+All configuration files are stored in the `env_cfg/task_config` folder and follow the standard YAML format.
 
-You can run `bash task_config/create_task_config.sh ${task_config_name}` to create new task configuration.
+You can run `bash env_cfg/task_config/create_task_config.sh ${task_config_name}` to create new task configuration.
 
 ## ✅ Minimal Example
 
@@ -62,7 +62,7 @@ eval_video_log: true
 | Field          | Type | Required | Description                                                                                                                                               |
 |----------------|------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `embodiment`   | list | ✅        | List of robot embodiment(s). For a dual-arm robot, use `[name]`, e.g., `[aloha-agilex]`; to combine two single-arm robots, use `[left, right, interval]`, e.g., `embodiment: [piper, franka-panda, 0.6]`, `embodiment: [franka-panda, franka-panda, 0.8]`. The `interval` specifies the distance between arms (typically 0.6–0.8 meters). Available Embodiment: `ur5-wsg`, `ARX-X5`, `franka-panda`, `piper`, `aloha-agilex`(dual-arm) |
-| `use_seed`     | bool | ✅        | Whether to use a predefined seed list from `data/${task_name}/${task_config}/seed.txt`. If `false`, the system will automatically explore viable seeds.                         |
+| `use_seed`     | bool | ✅        | Whether to use a predefined seed list from `data/<task_config>/<task_name>/<embodiment>/seed.txt`. If `false`, the system will automatically explore viable seeds.                         |
 | `episode_num`  | int  | ✅        | Number of **successful episodes** to collect.                                                                                                             |
 | `language_num` | int  | optional | If using language-conditioned task planning, sets the number of language descriptions to sample for each task.                                            |
 
@@ -106,7 +106,7 @@ camera:
 
 | Field                  | Type | Description                                                                        |
 | ---------------------- | ---- | ---------------------------------------------------------------------------------- |
-| `head_camera_type`     | str  | Camera used for global observation. Options: see `task_config/_camera_config.yml`. |
+| `head_camera_type`     | str  | Camera used for global observation. Options: see `env_cfg/task_config/_camera_config.yml`. |
 | `wrist_camera_type`    | str  | Camera used for close-up view.                                                     |
 | `collect_head_camera`  | bool | Whether to collect head-view data.                                                 |
 | `collect_wrist_camera` | bool | Whether to collect wrist-view data.                                                |

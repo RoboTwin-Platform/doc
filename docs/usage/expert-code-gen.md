@@ -19,7 +19,7 @@ The code generation system also interacts with these important directories:
   - **_base_task.py**: Core environment with robot control functions and utilities
     - Includes `save_camera_images(task_name, step_name, generate_num_id, save_dir)` for capturing visual observations during task execution
 - **./envs_gen/**: Stores auto-generated task implementations
-- **./task_config/**: Configuration files for tasks and embodiments
+- **./env_cfg/task_config/**: Configuration files for tasks and embodiments
 - **./scripts/**: Template scripts and utilities
 - **./assets/objects/**: 3D models and metadata for simulation objects
 - **./camera_images/**: Stores observation images captured during code generation for multi-modal feedback

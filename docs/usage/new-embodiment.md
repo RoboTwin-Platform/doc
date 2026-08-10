@@ -214,7 +214,7 @@ static_camera_list:
 
 ## Step 3: Add Embodiment Path
 
-Edit `task_config/_embodiment_config.yml` and add your new robot path:
+Edit `env_cfg/task_config/_embodiment_config.yml` and add your new robot path:
 
 ```yml
 new_robot:
@@ -225,7 +225,7 @@ new_robot:
 
 ## Step 4: Modify Task Config
 
-In your task config (e.g., `task_config/demo_randomized.yml`), change the `embodiment` section to:
+In your task config (e.g., `env_cfg/task_config/demo_randomized.yml`), change the `embodiment` section to:
 
 ```yml
 embodiment:
